@@ -50,19 +50,18 @@ void playNote(int freq, int duration, bool modulated) {
             if (modulateCount1 % (freq / modulatingFreq))
                 modulateCount2 = (modulateCount2 + 1) % waveformLength;
             while (j--) {
-            Aout = waveform[j] * waveform[modulateCount2];
-            wait_us(waitTime);
+                Aout = waveform[j] * waveform[modulateCount2];
+                wait_us(waitTime);
             }
         }
         modulateCount1 = 0;
-        modulateCount2 = 0;
     }else {
         printf("Play notes %d\n", freq);
         while (i--) {
             j = waveformLength;
             while (j--) {
-            Aout = waveform[j];
-            wait_us(waitTime);
+                Aout = waveform[j];
+                wait_us(waitTime);
             }
         }
     }
